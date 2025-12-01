@@ -32,9 +32,24 @@ def train_one_epoch(model, train_loader, loss_fn, optimizer, device):
         optimizer.step()
 
         running_loss += loss.item()
+        # 获取预测结果
+        # outputs.max(1) 返回每一行的最大值和其索引
+        # _ 是最大值，predicted 是最大值所在的索引（即预测的类别）
+        # outputs 的形状通常是 [batch_size, num_classes]
+        # outputs.max(1) 会在第二个维度（维度索引为1，即类别维度）上寻找最大值
+        # 它返回一个元组 (values, indices)
+        # values 是每行的最大值（由于不关心，所以用 _ 忽略）
+        # 一般用 _ 代替不关心的变量，使用其他符号，例如 a b c 也行
+        # indices 是最大值所在的索引，这个索引就代表了模型预测的类别
+        # predicted 的形状是 [batch_size]
         _, predicted = outputs.max(1)
+        # 统计样本总数
         total += labels.size(0)
-        correct += predicted.eq(labels).sum().item()
+        # 统计预测正确的样本数
+        # (predicted == labels) 会生成一个布尔张量
+        # eq(labels)使用 equal 函数进行比较
+        # .sum() 计算True的数量, .item() 将其转换为Python数字
+        correct += (predicted == labels).sum().item()
 
     epoch_loss = running_loss / len(train_loader)
     epoch_acc = 100 * correct / total

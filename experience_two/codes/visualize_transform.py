@@ -10,6 +10,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 def denormalize(tensor):
     """反归一化，将 Normalize 后的图片还原用于显示"""
+    """使用 ImageNet 的均值和方差值"""
     mean = [0.485, 0.456, 0.406]
     std = [0.229, 0.224, 0.225]
     for t, m, s in zip(tensor, mean, std):

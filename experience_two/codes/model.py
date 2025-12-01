@@ -7,7 +7,6 @@ class FoodCNN(nn.Module):
     自定义 CNN 模型用于 Food-11 分类
     结构: 4层卷积 + 3层全连接
     """
-
     def __init__(self, num_classes=11):
         super(FoodCNN, self).__init__()
 
@@ -53,6 +52,16 @@ class FoodCNN(nn.Module):
         x = self.classifier(x)
         return x
 
+    """
+    如果不习惯 x = x.view(x.size(0), -1)
+    可在 __init__():
+            self.flatten = nn.Flatten()
+    在 def forward(self, x):
+        x = self.features(x)
+        x = self.flatten(x)
+        x = self.classifier(x)
+    代替
+    """
 
 if __name__ == '__main__':
     # 测试模型
