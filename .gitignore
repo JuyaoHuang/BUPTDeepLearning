@@ -1,3 +1,6 @@
+*.idea
+*__pycache__
+
 experience_one/codes/__pycache__
 experience_two/codes/__pycache__
 
