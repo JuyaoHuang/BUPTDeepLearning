@@ -1,8 +1,5 @@
 *.idea
 *__pycache__
-
-experience_one/codes/__pycache__
-experience_two/codes/__pycache__
-
-experience_one/codes/.idea
-experience_two/codes/.idea
+*.pth
+*dataset/
+experiment_4/

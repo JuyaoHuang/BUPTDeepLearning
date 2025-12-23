@@ -1,6 +1,0 @@
-name: MachineLearning
-channels:
-  - defaults
-dependencies:
-  - python=3.10
-prefix: /root/miniconda3/envs/MachineLearning
