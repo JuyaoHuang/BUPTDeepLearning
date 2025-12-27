@@ -9,6 +9,11 @@ UNK_TOKEN = '[UNK]' # 未知字符，ID=1
 CLS_TOKEN = '[CLS]' # 句首分类标记，ID=2
 SEP_TOKEN = '[SEP]' # 句子分隔标记，ID=3
 
+def get_num_workers():
+    """根据操作系统返回合适的 num_workers 值"""
+    return 4
+
+
 class Vocab:
     """
     词表类：负责将字符转换为 ID，或者将 ID 转换为字符
@@ -130,7 +135,7 @@ def get_dataloader(data_path, batch_size=64, max_len=64):
         train_dataset,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=4,
+        num_workers=get_num_workers(),
         pin_memory=True
     )
 
@@ -138,7 +143,7 @@ def get_dataloader(data_path, batch_size=64, max_len=64):
         dev_dataset,
         batch_size=batch_size,
         shuffle=False,
-        num_workers=4,
+        num_workers=get_num_workers(),
         pin_memory=True
     )
 
@@ -146,7 +151,7 @@ def get_dataloader(data_path, batch_size=64, max_len=64):
         test_dataset,
         batch_size=batch_size,
         shuffle=False,
-        num_workers=4,
+        num_workers=get_num_workers(),
         pin_memory=True
     )
 

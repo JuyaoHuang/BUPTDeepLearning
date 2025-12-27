@@ -16,16 +16,16 @@
 2. [CV基础](https://github.com/JuyaoHuang/BUPTDeepLearning/blob/main/experience_2/report/experience2.md)：CNN 中的 VGG 模型应用
 3. [自编码器的实现](https://github.com/JuyaoHuang/BUPTDeepLearning/blob/main/experience_3/report/experience3.md)：SAE、VAE
 4. [图像风格迁移的应用](https://github.com/JuyaoHuang/BUPTDeepLearning/blob/main/experience_3/report/experience3.md)
-5. [Transformer实现语义分析](./)
+5. [Transformer实现语义分析](./https://github.com/JuyaoHuang/BUPTDeepLearning/blob/main/experience_4/report/experience4.md)
 
 ## 🔗 Pretrained Model
 
 以百度网盘的方式提供训练好的模型。
 
-[网盘链接](https://pan.baidu.com/s/1SIA-L_P-mVItnBFleWeolQ?pwd=2fdk)：
+[网盘链接](https://pan.baidu.com/s/1HZZpnj3DcQZ2dLDiALe8Lg?pwd=p16p)：
 
 通过网盘分享的文件：深度学习训练模型
-链接: https://pan.baidu.com/s/1SIA-L_P-mVItnBFleWeolQ?pwd=2fdk 提取码: 2fdk
+链接: https://pan.baidu.com/s/1HZZpnj3DcQZ2dLDiALe8Lg?pwd=p16p 提取码: p16p
 
 ### 1.实验一 CIFAR-10 
 
@@ -56,6 +56,10 @@
 
 1. **解码模型**：style_transfer/pytorch-AdaIN/experiments/ 为解码器模型训练时，不同迭代轮次保存的模型。命名格式：`decoder_iter_<epoches>.pth.tar`
 2. **vgg_normalised.pth**：VGG 预训练模型
+
+### 4. 实验四 Transformer 语义分类模型
+
+**模型名**：`best_model_6layers_v2.pth`
 
 ## 📄 License
 
